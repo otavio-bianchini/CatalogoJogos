@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CatalogoJogos</name>
+    </assembly>
+    <members>
+        <member name="M:CatalogoJogos.Controllers.V1.GamesController.Obter(System.Int32,System.Int32)">
+            <summary>
+            Retorna a lista de jogos paginada
+            </summary>
+            <remarks>Não é possível retornar jogo sem paginação</remarks>
+            <param name="pag">Página a ser consultada</param>
+            <param name="q">Quantidade de parametros por pagina</param>
+            <response code = "200">Retorna lista de jogos</response>
+            <response code = "204">Caso não haja jogos</response>
+            <returns></returns>
+        </member>
+        <member name="M:CatalogoJogos.Controllers.V1.GamesController.Obter(System.Guid)">
+            <summary>
+            Retorna jogo pelo seu Id
+            </summary>
+            <param name="idGame">Id do jogo desejado</param>
+            <response code = "200">Retorna o jogo uscado</response>
+            <response code = "204">caso não haja jogo com o Id requisitado</response>
+            <returns></returns>
+        </member>
+        <member name="M:CatalogoJogos.Controllers.V1.GamesController.InsertGame(CatalogoJogos.InputModel.GameInputModel)">
+            <summary>
+            Insere novo Jogo na lista
+            </summary>
+            <param name="gameInputModel">
+            Informações referentes ao jogo a ser acrecentado na lista onde:
+             O nome deve conter entre 3 e 100 caracteres;
+             A produtora deve conter entre 1 e 100 caracteres;
+             O preço deve estar em um valor entre 0 e R$10.000,00
+            </param>
+            <response code = "200">Jogo inserido na lista</response>
+            <response code = "400">Dado do jogo inválido</response>
+            <response code = "422">Caso já haja este mesmo jogo feito pela mesma produtora na lista</response>
+            <returns></returns>
+        </member>
+        <member name="M:CatalogoJogos.Controllers.V1.GamesController.UpdateGame(System.Guid,CatalogoJogos.InputModel.GameInputModel)">
+            <summary>
+            Atualiza informações de um jogo
+            </summary>
+            <param name="idGame">Id do jogo que se deseja alterar</param>
+            <param name="gameInputModel">Novos parâmetros para o jogo</param>
+            <response code = "200">Atualização de jogo concluida</response>
+            <response code = "400">Dado do jogo invalido</response>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
